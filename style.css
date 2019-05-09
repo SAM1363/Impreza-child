@@ -1,0 +1,37 @@
+/*
+Theme Name: Impreza Child
+Template: Impreza
+Version: 1.0
+Author:	UpSolution
+Theme URI: http://impreza.us-themes.com/
+Author URI: http://us-themes.com/
+*/
+
+/*Add your own styles here:*/
+@import url('./style-lapraim.css');
+
+
+/*@font-face {
+	font-family: 'primary-l';
+	src: url('../Impreza-child/fonts/ParaType - DIN 2014 Light.otf');
+}
+@font-face {
+	font-family: 'primary';
+	src: url('../Impreza-child/fonts/ParaType - DIN 2014.otf');
+}
+@font-face {
+	font-family: 'primary-i';
+	src: url('../Impreza-child/fonts/ParaType - DIN 2014 Italic.otf');
+}
+@font-face {
+	font-family: 'primary-b';
+	src: url('../Impreza-child/fonts/ParaType - DIN 2014 Bold.otf');
+}
+@font-face {
+	font-family: 'primary-bi';
+	src: url('../Impreza-child/fonts/ParaType - DIN 2014 Bold Italic.otf');
+}
+@font-face {
+	font-family: 'secondary';
+	src: url('../Impreza-child/fonts/VampiroOne-Regular.ttf');
+}*/

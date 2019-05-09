@@ -1,0 +1,419 @@
+
+/* VARS
+ * =================================
+ */
+  $primary: black;
+
+ 	$lightest-grey: #f8f8f8;
+ 	$light-grey: #e8e8e8;
+ 	$med-grey: #b8b8b8;
+ 	$dark-grey: #333;
+  $cb: cubic-bezier(.49,.01,.22,1);
+
+/* MIXINS
+ * =================================
+ */
+  @mixin transform($val) {
+    -webkit-transform: $val;
+    -moz-transform: $val;
+    -ms-transform: $val;
+    transform: $val;
+  }
+
+  @mixin transition($val...) {
+    -webkit-transition: $val;
+    -moz-transition: $val;
+    -o-transition: $val;
+    -ms-transition: $val;
+    transition: $val;
+  }
+
+  @mixin transform-origin ($origin) {
+    moz-transform-origin: $origin;
+    -o-transform-origin: $origin;
+    -ms-transform-origin: $origin;
+    -webkit-transform-origin: $origin;
+    transform-origin: $origin;
+  }
+
+  @mixin display-flex {
+    display: -webkit-flex;
+    display: flex;
+  }
+
+  @mixin display-inline-flex {
+    display: -webkit-inline-box;
+    display: -webkit-inline-flex;
+    display: -moz-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+  }
+
+  @mixin justify-content($value) {
+    -webkit-justify-content: $value;
+    justify-content: $value;
+  }
+
+  @mixin flex-wrap($wrap) {
+    -webkit-flex-wrap: $wrap;
+    -moz-flex-wrap: $wrap;
+    -ms-flex-wrap: $wrap;
+    flex-wrap: $wrap;
+  }
+
+  @mixin align-content($align) {
+    -webkit-align-content: $align;
+    -moz-align-content: $align;
+    -ms-align-content: $align;
+    align-content: $align;
+  }
+
+  @mixin align-items($align) {
+    -webkit-align-items: $align;
+    -moz-align-items: $align;
+    -ms-align-items: $align;
+    align-items: $align;
+  }
+
+  @mixin align-self($align) {
+    -webkit-align-self: $align;
+    -moz-align-self: $align;
+    -ms-align-self: $align;
+    align-self: $align;
+  }
+
+  @mixin align-content($align) {
+    -webkit-align-content: $align;
+    -moz-align-content: $align;
+    -ms-align-content: $align;
+    align-content: $align;
+  }
+
+  @mixin user-select($val) {
+    -webkit-user-select: $val;
+    -moz-user-select: $val;
+    -ms-user-select: $val;
+    user-select: $val;
+  }
+
+  @mixin appearance($val) {
+    -webkit-appearance: $val;
+    -moz-appearance: $val;
+    -ms-appearance: $val;
+    -o-appearance: $val;
+    appearance: $val;
+  }
+
+  @mixin order($val) {
+    -webkit-box-ordinal-group: $val;
+    -moz-box-ordinal-group: $val;
+    -ms-flex-order: $val;
+    -webkit-order: $val;
+    order: $val;
+  }
+
+  @mixin flex-direction($direction) {
+    -webkit-flex-direction: $direction;
+    -moz-flex-direction: $direction;
+    -ms-flex-direction: $direction;
+    flex-direction: $direction;
+  }
+
+  @mixin flex($fg: 1, $fs: null, $fb: null) {
+
+    // Set a variable to be used by box-flex properties
+    $fg-boxflex: $fg;
+
+    // Box-Flex only supports a flex-grow value so let's grab the
+    // first item in the list and just return that.
+    @if type-of($fg) == 'list' {
+      $fg-boxflex: nth($fg, 1);
+    }
+
+    -webkit-box-flex: $fg-boxflex;
+    -webkit-flex: $fg $fs $fb;
+    -moz-box-flex: $fg-boxflex;
+    -moz-flex: $fg $fs $fb;
+    -ms-flex: $fg $fs $fb;
+    flex: $fg $fs $fb;
+  }
+
+  @mixin clip-path($clip...) {
+    -webkit-clip-path: $clip;
+    -moz-clip-path: $clip;
+    -ms-clip-path: $clip;
+    clip-path: $clip;
+  }
+
+  @mixin animation($animation, $duration, $timing-function: false, $delay: false, $direction: false, $iteration-count: false) {
+    -webkit-animation-delay: $delay;
+    -webkit-animation-duration: $duration;
+    -webkit-animation-name: $animation;
+    -webkit-animation-direction: $direction;
+    -webkit-animation-timing-function: $timing-function;
+    -webkit-animation-iteration-count: $iteration-count;
+
+    -moz-animation-delay: $delay;
+    -moz-animation-duration: $duration;
+    -moz-animation-name: $animation;
+    -moz-animation-direction: $direction;
+    -moz-animation-timing-function: $timing-function;
+    -moz-animation-iteration-count: $iteration-count;
+
+    animation-delay: $delay;
+    animation-duration: $duration;
+    animation-name: $animation;
+    animation-direction: $direction;
+    animation-timing-function: $timing-function;
+    animation-iteration-count: $iteration-count;
+  }
+
+  @mixin keyframes($animationName) {
+    @-webkit-keyframes #{$animationName} {
+      @content;
+    }
+    @-moz-keyframes #{$animationName} {
+      @content;
+    }
+    @keyframes #{$animationName} {
+      @content;
+    }
+  }
+
+  @mixin border-box {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+
+  @mixin filter($value) {
+    -webkit-filter: $value;
+    -moz-filter: $value;
+    -o-filter: $value;
+    filter: $value;
+  }
+
+  @mixin linear-gradient($direction, $color-stops...) {
+    @if is-direction($direction) == false {
+      $color-stops: $direction, $color-stops;
+      $direction: 180deg;
+    }
+
+    background: nth(nth($color-stops, 1), 1);
+    background: -webkit-linear-gradient(legacy-direction($direction), $color-stops);
+    background: linear-gradient($direction, $color-stops);
+    }
+  @function is-direction($value) {
+    $is-keyword: index((to top, to top right, to right top, to right, to bottom right, to right bottom, to bottom, to bottom left, to left bottom, to left, to left top, to top left), $value);
+    $is-angle: type-of($value) == 'number' and index('deg' 'grad' 'turn' 'rad', unit($value));
+
+    @return $is-keyword or $is-angle;
+  }
+  @function legacy-direction($value) {
+    @if is-direction($value) == false {
+      @error "Cannot convert `#{$value}` to legacy syntax because it doesn't seem to be a direction.";
+    }
+
+    $conversion-map: (
+      to top          : bottom,
+      to top right    : bottom left,
+      to right top    : left bottom,
+      to right        : left,
+      to bottom right : top left,
+      to right bottom : left top,
+      to bottom       : top,
+      to bottom left  : top right,
+      to left bottom  : right top,
+      to left         : right,
+      to left top     : right bottom,
+      to top left     : bottom right
+    );
+
+    @if map-has-key($conversion-map, $value) {
+      @return map-get($conversion-map, $value);
+    }
+
+    @return 90deg - $value;
+  }
+
+/* GENERAL
+ * =================================
+ */
+  @charset "UTF-8";
+  html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+  }
+  * {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    @include border-box;
+    font-family: helvetica, arial, sans-serif;
+    font-weight: unset;
+  }
+  a {
+  	text-decoration: none;
+  	color: #333;
+  	&:hover {
+	    text-decoration: none;
+	    cursor: pointer;
+	  }
+  }  
+  .hide,
+  .hidden {
+    display: none !important;
+  }
+  span {
+  	font: inherit;
+  	color: inherit;
+  }
+  h1, h2, h3, h4, h5, h6 {
+  	display: block;
+  	width: 100%;
+  	line-height: 1.15;
+    margin-bottom: 15px;
+    padding: 0;
+    &.white {
+      color: white;
+    }
+  }
+  p, li {
+  	font-size: 19px;
+  	line-height: 1.5;
+  	margin-bottom: 30px;
+  	a {
+  		text-decoration: underline;
+  	}
+    &.bold {
+      font-weight: bold;
+    }
+    &.white {
+      color: white;
+    }
+  	&.sm {
+  		font-size: 17px;
+  	}
+  	&.xsm {
+  		font-size: 15px;
+  	}
+  }
+  ul {
+  	list-style: none;
+  	padding-left: 24px;
+  	li {
+  		&.subbullet {
+  			padding-left: 22px;
+  			margin-top: -10px;
+  			&:before {
+  				top: 12px;
+  				left: 0;
+  				width: 10px;
+  				height: 2px;
+  			}
+  		}
+  		&:before {
+  			content: '';
+  			position: absolute;
+  			height: 6px;
+  			width: 6px;
+  			background: black;
+  			left: -16px;
+  			top: 8px;
+  		}
+  		&.ast {
+  			left: -15px;
+  			&:before {
+  				display: none;
+  			}
+  		}
+  	}
+  }
+  a.button,
+  button.button,
+  span.button,
+  input[type="submit"].button {
+  	color: white;
+  	font-size: 17px;
+    line-height: 1;
+    text-decoration: none;
+  	background-color: $primary;
+  	padding: 16px 24px;
+    box-shadow: 0 2px 2px rgba(0,0,0,.1);
+    min-width: 220px;
+    white-space: nowrap;
+    border: none;
+  	@include display-inline-flex;
+  	@include justify-content(center);
+  	@include align-items(center);
+  	@include transition(all .2s ease-in-out);
+  	cursor: pointer;
+    &:before {
+      display: none;
+    }
+  	i {
+  		margin: 0 -10px 0 10px;
+  	}
+  }
+
+  .l-content {
+    .l-section {
+      padding: 0 !important;
+      .l-section-h {
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+        .vc_row {
+          margin: 0 !important;
+          .wpb_column {
+            .vc_column-inner {
+              margin: 0 !important;
+              padding: 0 !important;
+              .wpb_wrapper {
+                .wpb_text_column {
+                  .wpb_wrapper {
+                    background-color: white;
+                    height: 50vh;
+                    .header-wraper{
+                      @include display-flex;
+                      @include justify-content(center);
+                      @include align-items(center);
+                      @include flex-direction(column);
+                      background: lightgray;
+                      border: rebeccapurple 2px bold;
+                      .logo{
+                        color: aqua
+                      }
+                      .navmenu{
+                        color: brown
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  .l-content {
+    .l-section {
+      .l-section-h {
+        .vc_row {
+          .wpb_column {
+            .vc_column-inner {
+              .wpb_wrapper {
+                .wpb_text_column {
+                  .wpb_wrapper {
+                    
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
