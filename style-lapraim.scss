@@ -255,8 +255,9 @@
   }
   a {
   	text-decoration: none;
-  	color: #333;
+  	color: rgb(10, 10, 10);
   	&:hover {
+      color:red;
 	    text-decoration: none;
 	    cursor: pointer;
 	  }
@@ -265,10 +266,10 @@
   .hidden {
     display: none !important;
   }
-  span {
-  	font: inherit;
-  	color: inherit;
-  }
+  // span {
+  // 	font: inherit;
+  // 	color: inherit;
+  // }
   h1, h2, h3, h4, h5, h6 {
   	display: block;
   	width: 100%;
@@ -357,6 +358,47 @@
   	}
   }
 
+
+  header{
+    @include display-flex;
+    @include flex-direction(row);
+    @include justify-content(center);
+    @include align-items(center);
+    background: lightblue;
+    border: #333 solid 2px;
+    height: auto;
+    min-width: 1400px;
+    .header-wraper{
+      display: inline-flex;
+      align-items: center;
+      width: 100%;
+      // height: 100%;
+      justify-content: space-between;
+      background: blueviolet;
+      border: #333 solid 2px;
+      .site-branding{
+        position: inherit;
+        left: 10%;
+        width: 70px;
+        height: 70px;
+        margin: 10px;
+      }
+      .main-link{
+        @include display-flex;
+        @include justify-content(space-between);
+        margin: 10px;
+        padding: 60px 20px 0 0;
+        width: 60%;
+        font-weight: 600;
+        font-size: inherit;
+        span .link-name{
+          margin: 10px;
+        }
+      }
+    }
+  }
+
+
   .l-content {
     .l-section {
       padding: 0 !important;
@@ -373,21 +415,6 @@
               .wpb_wrapper {
                 .wpb_text_column {
                   .wpb_wrapper {
-                    background-color: white;
-                    height: 50vh;
-                    .header-wraper{
-                      @include display-flex;
-                      @include justify-content(center);
-                      @include align-items(center);
-                      @include flex-direction(column);
-                      background: lightgray;
-                      border: rebeccapurple 2px bold;
-                      .logo{
-                        color: aqua
-                      }
-                      .navmenu{
-                        color: brown
-                      }
                     }
                   }
                 }
@@ -397,7 +424,7 @@
         }
       }
     }
-  }
+  
   .l-content {
     .l-section {
       .l-section-h {

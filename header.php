@@ -72,7 +72,22 @@ do_action( 'us_before_canvas' ) ?>
 
 
 <header>
-	<div id="header-wrapper">
+	<div class="header-wraper">
+		<div class="site-branding">
+			<span class="site-title">
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img src="/wp-content/uploads/2019/05/screenshot.png" alt="logo not showing">
+				</a>
+			</span>
+		</div>
+		<div class="main-link">
+				<a href="#" class='each-a'><span class='link-name'>Get An Offer</span></a>
+				<a href="#" class='each-a'><span class='link-name'>How It Works</span></a>
+				<a href="#" class='each-a'><span class='link-name'>Available Properties</span></a>
+				<a href="#" class='each-a'><span class='link-name'>Investors Wanted</span></a>
+				<a href="#" class='each-a'><span class='link-name'>About</span></a>
+				<a href="#" class='each-a'><span class='link-name'>Contact</span></a>
+		</div>
 	</div>
 </header>
 
