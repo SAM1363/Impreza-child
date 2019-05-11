@@ -76,7 +76,7 @@ do_action( 'us_before_canvas' ) ?>
 		<div class="site-branding">
 			<span class="site-title">
 				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<img src="/wp-content/uploads/2019/05/screenshot.png" alt="logo not showing">
+				<img src="/wp-content/themes/Impreza-child/logo.png" alt="logo not showing">
 				</a>
 			</span>
 		</div>

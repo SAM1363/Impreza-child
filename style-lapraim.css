@@ -2,11 +2,11 @@
  * =================================
  */
 /* MIXINS
- * =================================
- */
+* =================================
+*/
 /* GENERAL
- * =================================
- */
+* =================================
+*/
 html, body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
@@ -146,8 +146,7 @@ header {
     align-items: center;
     width: 100%;
     justify-content: space-between;
-    background: blueviolet;
-    border: #333 solid 2px; }
+    background: white; }
     header .header-wraper .site-branding {
       position: inherit;
       left: 10%;
@@ -166,6 +165,30 @@ header {
       font-size: inherit; }
       header .header-wraper .main-link span .link-name {
         margin: 10px; }
+
+.top {
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-direction: row;
+  -moz-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -moz-align-items: center;
+  -ms-align-items: center;
+  align-items: center;
+  border: solid .5px; }
+  .top .contact-form {
+    border: #333 solid .5px;
+    width: 350px;
+    background: #8b8b9c;
+    margin: 40px; }
+    .top .contact-form h1 {
+      margin: 5px; }
+    .top .contact-form p {
+      margin: 5px; }
 
 .l-content .l-section {
   padding: 0 !important; }
