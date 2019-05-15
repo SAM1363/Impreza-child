@@ -16,7 +16,42 @@ if ( ( ! isset( $us_iframe ) OR ! $us_iframe ) AND ( ! isset( $us_hide_footer ) 
 
 
 	<footer>
-		<div id="footer-wrapper">
+		<hr>
+		<div class="footer-wrapper">
+
+			<div class="site-branding">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<img src="/wp-content/themes/Impreza-child/logo.png" alt="logo not showing" width='100px' height='100px'>
+					</a>
+			</div>
+
+			<nav class="link-container">
+					
+					<div class="box1">
+						<a href="#">How It Works</a>
+						<a href="#">Available Properties</a>
+						<a href="#">Investors Wanted</a>
+					</div>
+
+					<div class="box2">
+						<a href="#">About</a>
+						<a href="#">Contact</a>
+					</div>
+					
+					<div class="box3">
+						<a href="#">FAQs</a>
+						<a href="#">Privacy Policy</a>
+					</div>
+					
+			</nav>
+		</div>
+		<div class="foot-text">
+			We are a real estate solutions and investment firm that specializes in helping homeowners get rid of burdensome houses fast. We are not Realtors,
+			we are investors and problem solvers who can buy your house fast with a fair all cash offer.
+			<div class="copyrgiht">
+				<p>© 2017 Renovative Properties</p>
+				<p>Designed & Developed By <span>LaPraim Media</span></p>
+			</div>
 		</div>
 	</footer>
 

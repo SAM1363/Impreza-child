@@ -244,9 +244,10 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
+  // margin: 20px;
 }
 * {
-  position: relative;
+  // position: relative;
   margin: 0;
   padding: 0;
   @include border-box;
@@ -266,10 +267,7 @@ a {
 .hidden {
   display: none !important;
 }
-// span {
-// 	font: inherit;
-// 	color: inherit;
-// }
+
 h1, h2, h3, h4, h5, h6 {
   display: block;
   width: 100%;
@@ -283,7 +281,7 @@ h1, h2, h3, h4, h5, h6 {
 p, li {
   font-size: 19px;
   line-height: 1.5;
-  margin-bottom: 30px;
+  margin-bottom: 25px; // 30 -> 25px//
   a {
     text-decoration: underline;
   }
@@ -359,28 +357,28 @@ input[type="submit"].button {
 }
 
 
+/////// header //////////
 header{
   @include display-flex;
   @include flex-direction(row);
   @include justify-content(center);
   @include align-items(center);
   background: lightblue;
-  border: #333 solid 2px;
   height: auto;
   min-width: 1400px;
+  margin-bottom: 4%;
   .header-wraper{
     display: inline-flex;
     align-items: center;
     width: 100%;
-    // height: 100%;
     justify-content: space-between;
     background: rgb(255, 255, 255);
     // border: #333 solid 1px;
     .site-branding{
-      position: inherit;
+      position: relative;
       left: 10%;
-      width: 70px;
-      height: 70px;
+      width: 100px;
+      height: 100px;
       margin: 10px;
     }
     .main-link{
@@ -390,7 +388,7 @@ header{
       padding: 60px 20px 0 0;
       width: 60%;
       font-weight: 600;
-      font-size: inherit;
+      font-size: 19px;
       span .link-name{
         margin: 10px;
       }
@@ -398,26 +396,58 @@ header{
   }
 }
 
-.top{
-  @include display-flex;
-  @include flex-direction(row);
-  @include justify-content(center);
-  @include align-items(center);
-  border: solid .5px;
-  // justify-content: center;
-  .contact-form{
-    border: #333 solid .5px;
-    width: 350px;
-    background: rgb(139, 139, 156);
-    margin: 40px;
-    h1{
-      margin: 5px;
+/////////// section1 /////////////
+#top-section{
+  // @include display-flex;
+  // @include flex-direction(column);
+  // @include justify-content(center);
+  // @include align-items(center);
+  // border: solid 5px black;
+  margin-bottom: 10%;
+  // min-height: 100vh;
+  .contact-form.t-left{
+    transform: translate(60px, 120px);
+    width: 400px;
+    background: rgb(212, 212, 226);
+      h1{
+        margin: 5px;
+      }
+      p{
+        margin: 5px;
+      }
     }
-    p{
-      margin: 5px;
-    }
+    .t-right{       
+      @include display-flex;
+      @include justify-content(center);
+      div.head-text{
+        @include display-flex;
+        @include flex-direction(column);
+        width: 70%;
+        margin-top: 3%;
+        color: white;
+        h3{
+          background-color: black;
+          font-size: 80px;
+          font-weight: bolder;
+          display: flex;
+          justify-content: center;
+          margin-bottom: -10px;
+          padding: 10px;
+          opacity: .85;
+        }
+        .H1{
+          width: 400px;
+        }
+        .H2{
+          width: 490px;
+        }
+        .H3{
+          width: 430px;
+        }
+      }
     }
   }
+  
 
 
 .l-content {
@@ -431,12 +461,31 @@ header{
         margin: 0 !important;
         .wpb_column {
           .vc_column-inner {
+            
             margin: 0 !important;
             padding: 0 !important;
             .wpb_wrapper {
               .wpb_text_column {
                 .wpb_wrapper {
-                  
+                  // .top{
+                  //   @include display-flex;
+                  //   @include flex-direction(row);
+                  //   @include justify-content(center);
+                  //   @include align-items(center);
+                  //   border: solid .5px;
+                  //   .contact-form{
+                  //     border: #333 solid .5px;
+                  //     width: 350px;
+                  //     background: rgb(139, 139, 156);
+                  //     margin: 40px;
+                  //       h1{
+                  //         margin: 5px;
+                  //       }
+                  //       p{
+                  //         margin: 5px;
+                  //       }
+                  //     }
+                  //   }                  
                   }
                 }
               }
@@ -466,3 +515,95 @@ header{
     }
   }
 }
+
+
+///////////// section 4 //////////////////////
+section.bottom-container{
+  .bottom-text{
+    @include display-flex;
+    @include flex-direction(column);
+    margin-bottom: 10%;
+    h1{
+      margin-bottom: 30px;
+      font-weight: bolder;
+      font-size: 45px;   
+      .underL{
+        padding: 0 30px 20px 50px;
+        background:linear-gradient(transparent 40%, yellow 40%);
+        font-weight:bold; 
+      }
+    }
+    p.bottom-content{
+      color: #494949;
+      margin: 0 50px;
+    }
+  }
+}
+
+//////////////////// footer  ///////////////////////////
+footer{  
+  margin: 20px;
+  hr{
+    color: #c5c2c2;
+    margin-bottom: 20px;
+  }
+  .footer-wrapper{
+    @include display-inline-flex;
+    @include align-items(center);
+    @include justify-content(space-between);
+    // border: #333 solid 1px;
+    width: 100%;
+    .site-branding{
+      position: relative;
+      left: 10%;
+      img{
+        width: 100px;
+        height: 100px;
+      }
+    }
+    .link-container{
+      @include display-flex;
+      @include justify-content(space-around);
+      // border: red solid .5px;
+      padding: 10px;
+      margin: 10px;
+      width: 70%;
+      }
+    @mixin box{
+      // border: #333 solid .5px;
+      padding: 20px;
+      margin: 10px;
+    }
+      .box1, .box2, .box3{
+        @include box;
+        a{
+          @include display-flex;
+          @include justify-content(start);
+          color:rgb(161, 107, 5);
+          padding: 10px;
+          font-size: 20px;
+          font-weight: 400;
+        }
+      }
+    }
+    @mixin Foot {
+      color: #a7a4a4;
+      // border: #333 solid .5px;
+      padding: 10px;
+      font-size: 18px;
+      margin-top: 30px;
+      line-height: 25px;
+      }
+    .foot-text{
+      @include Foot;
+      .copyrgiht{
+        @include display-flex;
+        @include justify-content(space-between);
+        @include Foot;
+        padding: 0;
+        span{
+          color:orange;
+        }
+      }
+    }
+  }
