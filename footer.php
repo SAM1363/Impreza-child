@@ -15,7 +15,7 @@ if ( ( ! isset( $us_iframe ) OR ! $us_iframe ) AND ( ! isset( $us_hide_footer ) 
 	?>
 
 
-	<footer>
+	<footer id='footer'>
 		<hr>
 		<div class="footer-wrapper">
 

@@ -375,6 +375,51 @@ input[type="submit"].button {
   font-weight: 300;
   color: #494949;
 }
+/////// sidebar /////////
+.side-link{
+  .social{
+    position: fixed;
+    top: 220px;
+    right: -50px;
+    transform: rotateZ(90deg);
+    background: orange;
+    color: white;
+    font-weight: bold;
+    width: max-content;
+
+    // &.move {
+    //   position: fixed;
+    //   top: 220px;
+    //   right: -50px;
+    //   transform: rotateZ(90deg);
+    //   background: orange;
+    //   color: white;
+    //   font-weight: bold;
+    //   width: max-content;
+    //   }
+
+    .connect{
+      border-bottom: white 2px solid;
+      h4{
+        font-size: 20px;
+        padding: 15px;
+        text-align: center;
+      }
+    }
+    .icons{
+      display: flex;
+      div{
+        border-bottom: white solid 2px;
+        transform: rotateZ(-90deg);
+        font-size: 20px;
+        padding: 11px;
+        width: 100%;
+        text-align: center;
+      }
+    }
+  }
+}
+
 
 /////// header //////////
 header{
@@ -386,9 +431,9 @@ header{
   .yellow-back{
     position: absolute;
     background: yellow;
-    clip-path: polygon(0 33%, 100% 0%, 100% 100%, 0% 100%);
+    clip-path: polygon(0 27%, 100% 0%, 100% 100%, 0% 100%);
     width: 100%;
-    height: 800px;
+    height: 950px;
     top: 0;
     }
     .header-wraper{
@@ -475,9 +520,14 @@ header{
         
           p{
             font-weight: bold;
+            span.asterisk:after {
+              content: '*';
+              display: inline;
+              color: red;
+            }
             .wpcf7-form-control{
               border-radius: 0%;
-              border: #e4e3e3 solid 1px;
+              border: #d5d5d5 solid 1px;
               margin: 0 0 5%;
               padding: 5px;
               &.wpcf7-submit{
@@ -710,7 +760,6 @@ footer{
     }
     @mixin Foot {
       color: #a7a4a4;
-      // border: #333 solid .5px;
       padding: 10px;
       font-size: 18px;
       margin-top: 30px;
