@@ -356,15 +356,22 @@ input[type="submit"].button {
   }
 }
 
+
+
+
+
+
+
+
 // common //
 @mixin HeadT{
   margin-bottom: 30px;
   font-weight: bolder;
-  font-size: 50px; 
+  font-size: 47.2px; 
 }
 
 @mixin MainT{
-  font-size: 25px;
+  font-size: 23px;
   font-weight: 300;
   color: #494949;
 }
@@ -375,30 +382,41 @@ header{
   @include flex-direction(row);
   @include justify-content(center);
   @include align-items(center);
-  height: auto;
   min-width: 1400px;
-  .header-wraper{
-    display: inline-flex;
-    align-items: center;
+  .yellow-back{
+    position: absolute;
+    background: yellow;
+    clip-path: polygon(0 33%, 100% 0%, 100% 100%, 0% 100%);
     width: 100%;
-    justify-content: space-between;
-    .site-branding{
-      position: relative;
-      left: 10%;
-      width: 100px;
-      height: 100px;
-      margin: 10px;
+    height: 800px;
+    top: 0;
     }
-    .main-link{
-      @include display-flex;
+    .header-wraper{
+      @include display-inline-flex;
       @include justify-content(space-between);
-      margin: 10px;
-      padding: 6% 4% 0 0;
-      width: 65%;
-      font-weight: 600;
-      font-size: 20px;
-      span .link-name{
+      align-items: center;      
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      margin-top: 3%;
+
+      .site-branding{
+        position: relative;
+        left: 10%;
+        width: 100px;
+        height: 100px;
         margin: 10px;
+      }
+      .main-link{
+        @include display-flex;
+        @include justify-content(space-between);
+        margin: 10px;
+        padding: 6% 4% 0 0;
+        width: 65%;
+        font-weight: 600;
+        font-size: 20px;
+        span .link-name{
+          margin: 10px;
       }
     }
   }
@@ -406,29 +424,75 @@ header{
 
 ///// section1 /////////////////////////////////////////////////////////////////////
 #top-section{
-  background: rgb(251, 255, 0);
   margin-bottom: 10%;
+  margin-top: 7%;
   
 ////////////// form ///////////////////////
-    .contact-form{
-      // background: rgb(226, 223, 223);
-      transform: translate(90px, 175px);
-      height: 720px;
-      width: 530px;
-      .vc_column-inner{
-        position: absolute;
-        width: 620px;
-        background: rgb(242, 242, 242);
-        height: 100%;
+  .contact-form{
+    transform: translate(70px, 175px);
+    height: 720px;
+    width: 370px;
+    .vc_column-inner{
+      padding: 8%;
+      position: absolute;
+      width: 520px;
+      background: rgb(242, 242, 242);
+      height: 100%;
+      .form-text{
+        margin: 5% 0;
+        h1{
+          font-size: 25px;
+          font-weight: bold;
+          &:after{
+            content: '';
+            display: block;
+            height: 7px;
+            width: 60px;
+            background: black;
+            margin: 20px 0;
+          }
+        }
+        p{
+          font-weight: 300;
+          font-size: 16px;
+        }
       }
-      h1{
-        margin: 5px;
-      }
-      p{
-        margin: 5px;
+      
+      .wpcf7{
+        margin-top: 5%;
+        .PE{
+          display: flex;
+          margin-bottom: 7%;
+          .phone{
+            width: 47%;
+            margin-right: 3%;
+          }
+          .email{
+            width: 47%;
+            margin-left: 3%;
+          }
+        }
+        
+          p{
+            font-weight: bold;
+            .wpcf7-form-control{
+              border-radius: 0%;
+              border: #e4e3e3 solid 1px;
+              margin: 0 0 5%;
+              padding: 5px;
+              &.wpcf7-submit{
+                background: orange;
+                color: white;
+                width: 100%;
+                height: 48px;
+                font-size: 17px;
+              }
+            }
+          }
+        }
       }
     }
-  
+
 /////////////////// image //////////////
     .img1{
       width: 1100px;
@@ -440,7 +504,7 @@ header{
           @include display-flex;
           @include flex-direction(column);
           width: 73%;
-          margin-top: 4%;
+          margin: 4% 0 0 6%;
           color: white;
           h3{
             background-color: rgba(0, 0, 0, 0.844);
@@ -468,14 +532,54 @@ header{
 
 
 //////////////////// section 2 ///////////////////////////////////////////////////////////////////////
+#section2{
+  padding: 0%;
+  .i-cf{
+    padding: 0%;
+    .vc_column-inner{
+      padding: 0%;
 
+      .img2{
+        padding: 0%;
+        img{
+          width: 100%;
+          height: 700px;
+        }
+      }
+
+      .st2{
+        transform: translate(0px, -20px);
+        h1{
+          @include HeadT;
+          .underL{
+            padding: 0 20px 25px 55px;
+            background: linear-gradient(transparent 40%, yellow 40%);
+          }
+          .rest{
+            right: 170px;
+            position: absolute;
+          }
+        }
+        .Tcontainer{
+          margin: 5%;
+          width: 85%;
+          .text{
+            @include MainT;
+            width: 100%;
+          }
+        }
+      }
+
+    }
+  }
+}
 
 
 ///////////////////////////////////////// section 3 //////////////////////////////////////////////////////////////////////
 #section3{
   .i-cf{
     padding: 0%;
-    div.vc_column-inner{
+    .vc_column-inner{
       padding: 0%;
         .st3{
           transform: translate(0px, -50px);
@@ -486,8 +590,8 @@ header{
           h1{
             @include HeadT;
             .underL{
-              margin-left: 10px;
-              padding: 0 56px 20px 20px;
+              margin-left: 5px;
+              padding: 0 56px 20px 5px;
               background: linear-gradient(transparent 30%, yellow 30%);
             }
           }
@@ -514,13 +618,15 @@ header{
         flex-direction: column;
         justify-content: center;
         text-align: center;
-        height: 400px;
-        width: 560px;
-        margin: 4%;
+        height: 350px;
+        width: 580px;
         .well-said, .name{
           color: darkgray;
           font-size: 35px;
           padding-right: 40px;
+          &.well-said{
+            margin-bottom: 7%;
+          }
         }
         .name{
           justify-content: flex-end;
@@ -536,21 +642,24 @@ header{
 ///////////////////////////////////////////////////// section 4 /////////////////////////////////////////////////////////////////////////////
 #OurMission{
   padding: 0%;
-  section.bottom-container{
-    .bottom-text{
-      @include display-flex;
-      @include flex-direction(column);
-      margin-bottom: 10%;
-      h1{
-        @include HeadT;  
-        .underL{
-          padding: 0 30px 20px 50px;
-          background:linear-gradient(transparent 40%, yellow 40%);
+  .i-cf{
+    padding: 0%;
+    section.bottom-container{
+      .bottom-text{
+        @include display-flex;
+        @include flex-direction(column);
+        margin-bottom: 10%;
+        h1{
+          @include HeadT;  
+          .underL{
+            padding: 0 30px 20px 50px;
+            background:linear-gradient(transparent 40%, yellow 40%);
+          }
         }
-      }
-      p.bottom-content{
-        @include MainT;        
-        margin: 0 50px;
+        .text{
+          @include MainT;        
+          margin: 0 50px;
+        }
       }
     }
   }
@@ -558,35 +667,35 @@ header{
 
 //////////////////// footer  ///////////////////////////
 footer{  
-  margin: 5%;
-  hr{
-    border: 1.3px #f2f2f2 solid;
-    margin-bottom: 20px;
-    background: #f2f2f2;
-  }
-  .footer-wrapper{
-    @include display-inline-flex;
-    @include align-items(center);
-    @include justify-content(space-between);
-    // border: #333 solid 1px;
-    width: 100%;
-    .site-branding{
-      position: relative;
-      left: 10%;
-      img{
-        width: 100px;
-        height: 100px;
-      }
+  margin: 0 5% 5%;
+    hr{
+      border: 1.3px #f2f2f2 solid;
+      margin-bottom: 20px;
+      background: #f2f2f2;
     }
-    .link-container{
-      @include display-flex;
-      @include justify-content(space-around);
-      width: 70%;
+    .footer-wrapper{
+      @include display-inline-flex;
+      @include align-items(center);
+      @include justify-content(space-between);
+      // border: #333 solid 1px;
+      width: 100%;
+      .site-branding{
+        position: relative;
+        left: 10%;
+        img{
+          width: 100px;
+          height: 100px;
+        }
       }
-    @mixin box{
-      padding: 20px;
-      margin: 10px;
-    }
+      .link-container{
+        @include display-flex;
+        @include justify-content(space-around);
+        width: 70%;
+        }
+      @mixin box{
+        padding: 20px;
+        margin: 10px;
+      }
       .box1, .box2, .box3{
         @include box;
         a{

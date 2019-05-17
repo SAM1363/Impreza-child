@@ -70,25 +70,25 @@ if ( ! ( isset( $us_iframe ) AND $us_iframe ) AND us_get_option( 'preloader' ) !
 
 do_action( 'us_before_canvas' ) ?>
 
-
 <header>
-	<div class="header-wraper">
-		
-		<div class="site-branding">
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-				<img src="/wp-content/themes/Impreza-child/logo.png" alt="logo not showing">
-				</a>
+	<div class="yellow-back">	</div>
+		<div class="header-wraper">
+			<div class="site-branding">
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+					<img src="/wp-content/themes/Impreza-child/logo.png" alt="logo not showing">
+					</a>
+			</div>
+			<div class="main-link">
+					<a href="#"><span class='link-name'>Get An Offer</span></a>
+					<a href="#"><span class='link-name'>How It Works</span></a>
+					<a href="#"><span class='link-name'>Available Properties</span></a>
+					<a href="#"><span class='link-name'>Investors Wanted</span></a>
+					<a href="#"><span class='link-name'>About</span></a>
+					<a href="#"><span class='link-name'>Contact</span></a>
+			</div>
 		</div>
-		<div class="main-link">
-				<a href="#"><span class='link-name'>Get An Offer</span></a>
-				<a href="#"><span class='link-name'>How It Works</span></a>
-				<a href="#"><span class='link-name'>Available Properties</span></a>
-				<a href="#"><span class='link-name'>Investors Wanted</span></a>
-				<a href="#"><span class='link-name'>About</span></a>
-				<a href="#"><span class='link-name'>Contact</span></a>
-		</div>
-	</div>
-</header>
+	</header>
+
 
 
 <div class="l-canvas <?php echo $us_layout->canvas_classes() ?>">
