@@ -379,7 +379,7 @@ input[type="submit"].button {
 .side-link{
   .social{
     position: fixed;
-    top: 220px;
+    top: 32%;
     right: -50px;
     transform: rotateZ(90deg);
     background: orange;
@@ -407,7 +407,7 @@ input[type="submit"].button {
       }
     }
     .icons{
-      display: flex;
+      @include display-flex;
       div{
         border-bottom: white solid 2px;
         transform: rotateZ(-90deg);
@@ -427,7 +427,7 @@ header{
   @include flex-direction(row);
   @include justify-content(center);
   @include align-items(center);
-  min-width: 1400px;
+  // min-width: 1400px;
   .yellow-back{
     position: absolute;
     background: yellow;
@@ -441,7 +441,7 @@ header{
       @include justify-content(space-between);
       align-items: center;      
       width: 100%;
-      height: 100%;
+      // height: 100%;
       position: absolute;
       margin-top: 3%;
 
@@ -471,7 +471,9 @@ header{
 #top-section{
   margin-bottom: 10%;
   margin-top: 7%;
-  
+  .g-cols{
+    @include display-flex;
+    @include justify-content(center);
 ////////////// form ///////////////////////
   .contact-form{
     transform: translate(70px, 175px);
@@ -506,7 +508,7 @@ header{
       .wpcf7{
         margin-top: 5%;
         .PE{
-          display: flex;
+          @include display-flex;
           margin-bottom: 7%;
           .phone{
             width: 47%;
@@ -522,7 +524,7 @@ header{
             font-weight: bold;
             span.asterisk:after {
               content: '*';
-              display: inline;
+              // display: inline;
               color: red;
             }
             .wpcf7-form-control{
@@ -542,6 +544,7 @@ header{
         }
       }
     }
+  }
 
 /////////////////// image //////////////
     .img1{
@@ -557,11 +560,11 @@ header{
           margin: 4% 0 0 6%;
           color: white;
           h3{
+            @include display-flex;
+            @include justify-content(center);
             background-color: rgba(0, 0, 0, 0.844);
             font-size: 110px;
             font-weight: bolder;
-            display: flex;
-            justify-content: center;
             margin-bottom: -10px;
             padding: 10px;
           }
@@ -578,7 +581,8 @@ header{
       }   
     }
   }
-  
+
+
 
 
 //////////////////// section 2 ///////////////////////////////////////////////////////////////////////
@@ -588,7 +592,6 @@ header{
     padding: 0%;
     .vc_column-inner{
       padding: 0%;
-
       .img2{
         padding: 0%;
         img{
@@ -606,8 +609,7 @@ header{
             background: linear-gradient(transparent 40%, yellow 40%);
           }
           .rest{
-            right: 170px;
-            position: absolute;
+            margin-left: -20px;
           }
         }
         .Tcontainer{
@@ -717,7 +719,7 @@ header{
 
 //////////////////// footer  ///////////////////////////
 footer{  
-  margin: 0 5% 5%;
+  padding: 0 5% 5%;
     hr{
       border: 1.3px #f2f2f2 solid;
       margin-bottom: 20px;
@@ -778,3 +780,95 @@ footer{
       }
     }
   }
+
+
+
+
+
+/////////// responsive /////////////
+
+@media all and (max-width: 1422px){
+  #top-section{
+    .i-cf{
+      .g-cols{
+        .contact-form{
+          transform: translate(10px, 175px);
+          width: auto;
+          .vc_column-inner{
+          .wpb_wrapper{
+              padding: 5%;
+            }
+          }
+        }
+          .img1{
+            .wpb_wrapper{
+              display: flex;
+              justify-content: flex-end;
+              .head-text{
+                width:auto;
+            }    
+          }
+        }
+      }
+    }
+  }
+}
+
+@media all and (max-width: 1139px){
+  #top-section{
+    .img1{
+      width: 1050px;
+    }
+    h3{
+      font-size:90px;
+    }
+    .H2{
+      width: 570px;
+    }
+  }
+}
+
+
+@media all and (max-width: 1023px){
+  #section2,#section3{
+    
+    .left-column{
+      width: 100%;
+      height: auto;
+    }
+    .right-column{
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  #section3{
+    .g-cols{
+    display: flex;
+    justify-content: center;
+    flex-direction: column-reverse;
+    }
+  }
+  #OurMission{
+    .bottom-column{
+      width: 100%;
+    }
+  }
+  header .yellow-back{
+    clip-path: polygon(0 17%, 100% 0%, 100% 100%, 0% 100%);
+    height: 1050px;
+  }
+}
+
+@media all and (max-width: 900px){
+
+  
+}
+@media all and (max-width: 767px){
+
+}
+@media all and (max-width: 900px){
+
+}
+
+

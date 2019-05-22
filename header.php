@@ -71,6 +71,7 @@ if ( ! ( isset( $us_iframe ) AND $us_iframe ) AND us_get_option( 'preloader' ) !
 do_action( 'us_before_canvas' ) ?>
 
 <header>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<div class="yellow-back">	</div>
 		<div class="header-wraper">
 			<div class="site-branding">
