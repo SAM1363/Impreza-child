@@ -368,6 +368,15 @@ input[type="submit"].button {
   margin-bottom: 30px;
   font-weight: bolder;
   font-size: 47.2px; 
+  @media all and (max-width: 1200px){
+    font-size: 40px;
+  }
+  @media all and (max-width: 1023px){
+    font-size: 55px;
+  }
+  @media all and (max-width: 800px){
+    font-size: 42px;
+  }
 }
 
 @mixin MainT{
@@ -380,12 +389,14 @@ input[type="submit"].button {
   .social{
     position: fixed;
     top: 32%;
+    // top:20%;
     right: -50px;
     transform: rotateZ(90deg);
     background: orange;
     color: white;
     font-weight: bold;
     width: max-content;
+    z-index: 2;
 
     // &.move {
     //   position: fixed;
@@ -427,7 +438,6 @@ header{
   @include flex-direction(row);
   @include justify-content(center);
   @include align-items(center);
-  // min-width: 1400px;
   .yellow-back{
     position: absolute;
     background: yellow;
@@ -468,7 +478,7 @@ header{
 }
 
 ///// section1 /////////////////////////////////////////////////////////////////////
-#top-section{
+#section1{
   margin-bottom: 10%;
   margin-top: 7%;
   .g-cols{
@@ -524,7 +534,6 @@ header{
             font-weight: bold;
             span.asterisk:after {
               content: '*';
-              // display: inline;
               color: red;
             }
             .wpcf7-form-control{
@@ -602,7 +611,7 @@ header{
 
       .st2{
         transform: translate(0px, -20px);
-        h1{
+        .Head{
           @include HeadT;
           .underL{
             padding: 0 20px 25px 55px;
@@ -639,7 +648,10 @@ header{
           width: 100%;
           height: 900px;
           background: rgb(242, 242, 242);
-          h1{
+          @media all and (max-width: 1023px){
+            padding: 4% 4% 0 4%;
+          }
+          .Head{
             @include HeadT;
             .underL{
               margin-left: 5px;
@@ -692,16 +704,15 @@ header{
 
 
 ///////////////////////////////////////////////////// section 4 /////////////////////////////////////////////////////////////////////////////
-#OurMission{
+#section4{
   padding: 0%;
   .i-cf{
     padding: 0%;
-    section.bottom-container{
-      .bottom-text{
+      .st4{
         @include display-flex;
         @include flex-direction(column);
         margin-bottom: 10%;
-        h1{
+        .Head{
           @include HeadT;  
           .underL{
             padding: 0 30px 20px 50px;
@@ -715,7 +726,7 @@ header{
       }
     }
   }
-}
+
 
 //////////////////// footer  ///////////////////////////
 footer{  
@@ -729,7 +740,6 @@ footer{
       @include display-inline-flex;
       @include align-items(center);
       @include justify-content(space-between);
-      // border: #333 solid 1px;
       width: 100%;
       .site-branding{
         position: relative;
@@ -788,7 +798,7 @@ footer{
 /////////// responsive /////////////
 
 @media all and (max-width: 1422px){
-  #top-section{
+  #section1{
     .i-cf{
       .g-cols{
         .contact-form{
@@ -812,24 +822,49 @@ footer{
       }
     }
   }
+  header .yellow-back{
+    clip-path: polygon(0 17%, 100% 0%, 100% 92%, 0% 100%);
+    height: 1050px;
+  }
 }
 
 @media all and (max-width: 1139px){
-  #top-section{
+  #section1{
     .img1{
       width: 1050px;
-    }
-    h3{
-      font-size:90px;
-    }
-    .H2{
-      width: 570px;
+        .wpb_wrapper{
+          .t-right{
+            .head-text{
+              h3{
+                font-size:90px;
+            }
+              .H2{
+                width: 570px;
+            }
+          }    
+        }
+      }
     }
   }
 }
 
 
 @media all and (max-width: 1023px){
+  #section1{
+    .i-cf{
+      .g-cols{
+        .contact-form{
+          transform: translate(100px, 52%);
+          z-index: 1;
+        }
+        .img1{
+          width: 100%;
+        }
+      }
+    }
+  }
+
+
   #section2,#section3{
     
     .left-column{
@@ -849,26 +884,29 @@ footer{
     flex-direction: column-reverse;
     }
   }
-  #OurMission{
+  #section4{
     .bottom-column{
       width: 100%;
     }
   }
-  header .yellow-back{
-    clip-path: polygon(0 17%, 100% 0%, 100% 100%, 0% 100%);
-    height: 1050px;
+}
+
+@media all and (max-width: 900px){
+}
+
+
+@media all and (max-width: 767px){
+  }
+
+
+@media all and (max-width: 600px){
+  #section1{
+    .i-cf{
+      .g-cols{
+        .contact-form{
+          transform: translate(30px, 52%);
+        }
+      }
+    }
   }
 }
-
-@media all and (max-width: 900px){
-
-  
-}
-@media all and (max-width: 767px){
-
-}
-@media all and (max-width: 900px){
-
-}
-
-

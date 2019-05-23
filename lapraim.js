@@ -15,11 +15,27 @@ jQuery(document).scroll(function () {
 			// jQuery(".social").addClass("move");
 			jQuery(".social").css({
 				"position": "fixed",
+				// "position": "abslute",
 				"top": "150px",
 				"right": "-50px",
 				'transition': '.5s'
 				});
 		}
+		// if( scrollHeight - scrollPosition  <= footHeight ) { 
+		// 	jQuery(".social").css({
+		// 		"position": "absolute",
+		// 		"top": footHeight,
+		// 		// "right": "-50px",
+		// 		'transition': '.5s'
+		// 		});
+		// }else{
+		// 	jQuery(".social").css({
+		// 		"position": "fixed",
+		// 		"bottom": "auto",
+		// 		"right": "-50px",
+		// 		'transition': '.5s'
+		// 		});
+		// }
 });
 
 
