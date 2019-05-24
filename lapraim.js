@@ -4,49 +4,26 @@ jQuery(document).scroll(function () {
 		footHeight = jQuery("#footer").innerHeight(); 
 		headHeight = jQuery("header").innerHeight(); 
 
-		if( scrollHeight - scrollPosition  > footHeight ) { 
-			jQuery(".social").css({
-				"position": "fixed",
-				"top": "32%",
-				"right": "-50px",
-				'transition': '.5s'
-				});
-		}else {
-			// jQuery(".social").addClass("move");
-			jQuery(".social").css({
-				"position": "fixed",
-				// "position": "abslute",
-				"top": "150px",
-				"right": "-50px",
-				'transition': '.5s'
-				});
-		}
-		// if( scrollHeight - scrollPosition  <= footHeight ) { 
-		// 	jQuery(".social").css({
-		// 		"position": "absolute",
-		// 		"top": footHeight,
-		// 		// "right": "-50px",
-		// 		'transition': '.5s'
-		// 		});
-		// }else{
+		// if( scrollHeight - scrollPosition  > footHeight ) { 
 		// 	jQuery(".social").css({
 		// 		"position": "fixed",
-		// 		"bottom": "auto",
+		// 		"top": "200px",
+		// 		"right": "-50px",
+		// 		'transition': '.5s'
+		// 		});
+		// }else {
+		// 	// jQuery(".social").addClass("move");
+		// 	jQuery(".social").css({
+		// 		"position": "fixed",
+		// 		// "position": "abslute",
+		// 		"top": "150px",
 		// 		"right": "-50px",
 		// 		'transition': '.5s'
 		// 		});
 		// }
+		
 });
 
 
 
 
-// if ( scrollHeight - scrollPosition  <= footHeight ) { 
-// 	jQuery(".social").css({
-// 				"position":"absolute", 
-// 				'top':'83%',
-// 				'right': '-50px',
-// 				'transition': '1.5s'
-
-// 		});
-// }	else

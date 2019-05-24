@@ -27,18 +27,18 @@ if ( ( ! isset( $us_iframe ) OR ! $us_iframe ) AND ( ! isset( $us_hide_footer ) 
 
 			<nav class="link-container">
 					
-					<div class="box1">
+					<div class="box">
 						<a href="#">How It Works</a>
 						<a href="#">Available Properties</a>
 						<a href="#">Investors Wanted</a>
 					</div>
 
-					<div class="box2">
+					<div class="box">
 						<a href="#">About</a>
 						<a href="#">Contact</a>
 					</div>
 					
-					<div class="box3">
+					<div class="box">
 						<a href="#">FAQs</a>
 						<a href="#">Privacy Policy</a>
 					</div>

@@ -372,7 +372,10 @@ input[type="submit"].button {
     font-size: 40px;
   }
   @media all and (max-width: 1023px){
-    font-size: 55px;
+    font-size: 54px;
+  }
+  @media all and (max-width: 900px){
+    font-size: 48px;
   }
   @media all and (max-width: 800px){
     font-size: 42px;
@@ -383,13 +386,25 @@ input[type="submit"].button {
   font-size: 23px;
   font-weight: 300;
   color: #494949;
+  @media all and (max-width: 1139px){
+    font-size: 21px;
+  }
+  @media all and (max-width: 1023px){
+    font-size: 25px;
+  }
 }
 /////// sidebar /////////
+@mixin social-font{
+  font-size: 20px;
+  @media all and (max-width: 1023px){
+    font-size: 17px;
+  }
+}
 .side-link{
   .social{
     position: fixed;
-    top: 32%;
-    // top:20%;
+    // top: 32%;
+    top: 200px;
     right: -50px;
     transform: rotateZ(90deg);
     background: orange;
@@ -412,7 +427,8 @@ input[type="submit"].button {
     .connect{
       border-bottom: white 2px solid;
       h4{
-        font-size: 20px;
+        // font-size: 20px;
+        @include social-font;
         padding: 15px;
         text-align: center;
       }
@@ -422,7 +438,8 @@ input[type="submit"].button {
       div{
         border-bottom: white solid 2px;
         transform: rotateZ(-90deg);
-        font-size: 20px;
+        @include social-font;
+        // font-size: 20px;
         padding: 11px;
         width: 100%;
         text-align: center;
@@ -754,12 +771,9 @@ footer{
         @include justify-content(space-around);
         width: 70%;
         }
-      @mixin box{
+      .box{
         padding: 20px;
         margin: 10px;
-      }
-      .box1, .box2, .box3{
-        @include box;
         a{
           @include display-flex;
           @include justify-content(start);
@@ -799,8 +813,8 @@ footer{
 
 @media all and (max-width: 1422px){
   #section1{
-    .i-cf{
-      .g-cols{
+    // .i-cf{
+    //   .g-cols{
         .contact-form{
           transform: translate(10px, 175px);
           width: auto;
@@ -819,8 +833,8 @@ footer{
             }    
           }
         }
-      }
-    }
+    //   }
+    // }
   }
   header .yellow-back{
     clip-path: polygon(0 17%, 100% 0%, 100% 92%, 0% 100%);
@@ -829,6 +843,15 @@ footer{
 }
 
 @media all and (max-width: 1139px){
+  header{
+    .header-wraper{
+      .main-link{
+        width: 75%;
+        font-size: 17px;
+      }
+    }
+  }
+  
   #section1{
     .img1{
       width: 1050px;
@@ -850,6 +873,11 @@ footer{
 
 
 @media all and (max-width: 1023px){
+  .side-link{
+    .social{
+      right: -40px;
+    }
+  }
   #section1{
     .i-cf{
       .g-cols{
@@ -882,11 +910,33 @@ footer{
     display: flex;
     justify-content: center;
     flex-direction: column-reverse;
+    .friedrich{
+      .wpb_wrapper{
+        @include display-flex;
+        @include justify-content(center);
+        .friedrich-container{
+          height: 300px;
+          width: 580px;
+          font-size: 30px;
+          .name{
+            margin-bottom: 30px;
+          }
+        }
+      }
+    }
     }
   }
   #section4{
     .bottom-column{
       width: 100%;
+    }
+  }
+  footer{
+    .footer-wrapper{
+      .box{
+        padding: 0%;
+        margin: 0%;
+      }
     }
   }
 }
@@ -896,6 +946,15 @@ footer{
 
 
 @media all and (max-width: 767px){
+    footer{
+      .footer-wrapper{
+        .box{
+          a{
+          font-size: 18px;
+          }
+        }
+      }
+    }
   }
 
 
