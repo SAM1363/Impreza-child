@@ -557,8 +557,7 @@ header{
         top: 100%;
         display: flex;
         flex-direction: column;
-        background: white;
-        opacity: .95;
+        background: rgba(255, 255, 255, 0.98);
         font-weight: 600;
         transition: .5s;
         a{
@@ -770,8 +769,8 @@ header{
           width: 100%;
           height: 650px;
         }
-
       }
+      
       .friedrich-container{
         display: flex;
         flex-direction: column;
@@ -897,7 +896,7 @@ footer{
 }
 @media all and (max-width: 1422px){
   header .yellow-back{
-    clip-path: polygon(0 17%, 100% 0%, 100% 92%, 0% 100%);
+    clip-path: polygon(0 13%, 100% 0%, 100% 92%, 0% 100%);
     height: 1050px;
   }
 
@@ -956,12 +955,22 @@ footer{
       }
     }
   }
+
+  #section3 .i-cf .vc_column-inner .friedrich-container{
+    width: 450px;
+  }
+  #section3 .i-cf .vc_column-inner .friedrich-container .well-said, 
+  #section3 .i-cf .vc_column-inner .friedrich-container .name {
+    font-size: 30px;
+  }
+
 }
 
 
 @media all and (max-width: 1023px){
   header .yellow-back{
     height: 950px;
+    clip-path: polygon(0 13%, 100% 0%, 100% 90%, 0% 100%);
   }
   .side-link{
     .social{
@@ -1026,7 +1035,7 @@ footer{
           .friedrich-container{
             position: absolute;
             height: auto;
-            transform: translate(0px, -220px);
+                transform: translate(0px, -200px);
             .name,.well-said{
               color: white;
             }
@@ -1066,57 +1075,10 @@ footer{
     }
   }
 
-
-
-
-// @media all and (max-width: 767px){
-//     header{
-//       nav {
-//         position: absolute; 
-//         right:0;
-//         top: -350px; /*通常時はビュー外*/
-//         background:rgba(255,255,255,.7);
-//         width:50%;
-//         padding:0 10px;
-//         transition:.5s ease-in-out;
-//         text-align:left
-//       }
-//       #navToggle {
-//         display:block;
-
-//           span:nth-child(1) {
-//             &.openNav{
-//               top: 11px;
-//             transform:rotate(-45deg);
-//             }  
-//           }
-//           span:nth-child(2),
-//           span:nth-child(3) {
-//             &.openNav{
-//               top: 11px;
-//             transform:rotate(45deg);
-//             }
-//           }
-//           nav {
-//             &.openNav{
-//             transform: translateY(400px)
-//           }
-//         }
-//       }
-//       .mobile-header{
-//         height: 100vh;
-//         right: 0;
-//         position: fixed;
-//         width:350px;
-//       }  
-//     }  
-//   }
-
-
 @media all and (max-width: 767px){
 
   header .header-wraper{
-    background: rgba(255, 255, 255, 0.913);
+    background: rgba(255, 255, 255, 0.98);
     .main-link {
       display: none;
     }
@@ -1139,6 +1101,10 @@ footer{
       }
       .mobile-link {
         right: -420px;
+        height: 100vh;
+        display: flex;
+        justify-content: space-evenly;
+        text-align: center;
         &.openNav{
           transform: translateX(-420px);
           transition: .5s ease-in-out;
@@ -1190,23 +1156,30 @@ footer{
     padding: 6%;
   }
 }
-#section3 .i-cf .vc_column-inner .friedrich-container .well-said, 
-#section3 .i-cf .vc_column-inner .friedrich-container .name {
-  color: darkgray;
-  font-size: 30px;
+#section3 .g-cols .friedrich .wpb_wrapper .friedrich-container{
+  transform: translate(0px, -490px);
 }
-#section2 .i-cf .vc_column-inner .st2 .Tcontainer{
-  margin: 7% 7% 0;
-}
-  footer{
-    .footer-wrapper{
-      .box{
-        a{
-        font-size: 18px;
-        }
-      }
-    }
+
+  #section3 .i-cf .vc_column-inner .friedrich-container .well-said, 
+  #section3 .i-cf .vc_column-inner .friedrich-container .name {
+    color: darkgray;
+    font-size: 30px;
   }
+  
+  #section2 .i-cf .vc_column-inner .st2 .Tcontainer{
+    margin: 7% 7% 0;
+  }
+  #section2 .i-cf .vc_column-inner .img2 img{
+    height: 500px;
+  }
+  #section3 .i-cf .vc_column-inner .img3{
+    height: 500px;
+  }
+  footer .footer-wrapper .box a{
+    font-size: 18px;
+  }
+      
+  
 
   #section4 .i-cf .st4 .text{
     margin: 0 40px;
@@ -1216,6 +1189,10 @@ footer{
 
 
 @media all and (max-width: 600px){
+  header .yellow-back{
+    height: 900px;
+    clip-path: polygon(0 17%, 100% 0%, 100% 95%, 0% 100%);
+  }
 
   #section1 .i-cf .g-cols{
     .img1 .t-right div.head-text{
@@ -1253,6 +1230,18 @@ footer{
       }
     }
   }
+
+  footer .footer-wrapper{
+    .site-branding img{
+      height: 70px;
+      width: 70px;
+      margin: 5px;
+    }
+    .link-container{
+      width: 100%;
+    }
+  } 
+
 }
 
 @media all and (max-width: 550px){
@@ -1272,21 +1261,28 @@ footer{
     align-items: center;
     .img1{
       align-items: center;
-      .t-right div.head-text{
-      h3{
-        font-size: 60px;
-      }
-      .H1 {
-        width: 270px;
-      }
-      .H2 {
-        width: 330px;
-      }
-      .H3 {
-        width: 290px;
+      .vc_column-inner {
+        width: 100%;
+        .wpb_wrapper{
+          justify-content: center;
+          .t-right div.head-text{
+          h3{
+            font-size: 60px;
+          }
+          .H1 {
+            width: 270px;
+          }
+          .H2 {
+            width: 330px;
+          }
+          .H3 {
+            width: 290px;
+          }
+        }
       }
     }
   }
+  
 
     .contact-form{
       position: absolute;
@@ -1321,11 +1317,18 @@ footer{
 @media all and (max-width: 420px){
   header .header-wraper #mobile-container .mobile-link {
     width: 100%;
-    height: 100vh;
-    display: flex;
-    justify-content: space-evenly;
-    text-align: center;
   }
+  .side-link{
+    .social{
+      top: 280px;
+      // right: -75px;
+      &.hide{
+        transform: translateX(-150%);
+        @include transition( .5s ease-out);
+      }
+    }
+  }
+
   #section1 .i-cf .g-cols .contact-form .vc_column-inner {
         width: 350px;
       .form-text h1 {
@@ -1338,15 +1341,28 @@ footer{
 }
 
   #section3 .g-cols .friedrich .wpb_wrapper .friedrich-container{
+    transform: translate(0px, -390px);
     .name, .well-said{
       font-size: 22px;
     }
   }
+
+  #section2 .i-cf .vc_column-inner .img2 img{
+    height: 400px;
+  }
+  #section3 .i-cf .vc_column-inner .img3{
+    height: 400px;
+  }
+
+  footer .footer-wrapper .box a{
+    font-size: 15px;
+  }
+
 }
 
 @media all and (max-width: 350px){
   header .yellow-back{
-    height: 970px;
+    height: 860px;
   }
   #section1 .i-cf .g-cols{
     .img1 .t-right div.head-text{
@@ -1365,7 +1381,7 @@ footer{
   }
 
     .contact-form{
-      transform: translateY(200px);
+      transform: translateY(240px);
       .vc_column-inner{
         width: 315px;
       }
