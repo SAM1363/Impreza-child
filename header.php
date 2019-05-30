@@ -25,7 +25,7 @@ $us_layout = US_Layout::instance();
 	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 	<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"> -->
-
+	<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
 </head>
 
@@ -71,26 +71,41 @@ if ( ! ( isset( $us_iframe ) AND $us_iframe ) AND us_get_option( 'preloader' ) !
 do_action( 'us_before_canvas' ) ?>
 
 <header>
-<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1, user-scalable=no">
 	<div class="yellow-back">	</div>
 		<div class="header-wraper">
 			<div class="site-branding">
-					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<img src="/wp-content/themes/Impreza-child/logo.png" alt="logo not showing">
-					</a>
+				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
+				<img src="/wp-content/themes/Impreza-child/logo.png" alt="logo not showing">
+				</a>
 			</div>
 			<div class="main-link">
-					<a href="#"><span class='link-name'>Get An Offer</span></a>
-					<a href="#"><span class='link-name'>How It Works</span></a>
-					<a href="#"><span class='link-name'>Available Properties</span></a>
-					<a href="#"><span class='link-name'>Investors Wanted</span></a>
-					<a href="#"><span class='link-name'>About</span></a>
-					<a href="#"><span class='link-name'>Contact</span></a>
+					<a href="#">Get An Offer</a>
+					<a href="#">How It Works</a>
+					<a href="#">Available Properties</a>
+					<a href="#">Investors Wanted</a>
+					<a href="#">About</a>
+					<a href="#">Contact</a>
 			</div>
+
+			<div id="mobile-container">
+				<div id="navToggle">
+					<div>
+						<span></span> <span></span> <span></span>
+					</div>
+				</div>
+				<div class="mobile-link">
+						<a href="#">Get An Offer</a>
+						<a href="#">How It Works</a>
+						<a href="#">Available Properties</a>
+						<a href="#">Investors Wanted</a>
+						<a href="#">About</a>
+						<a href="#">Contact</a>
+				</div>
+			</div>
+	
+
 		</div>
-	</header>
-
-
+</header>
 
 <div class="l-canvas <?php echo $us_layout->canvas_classes() ?>">
 

@@ -24,6 +24,39 @@ jQuery(document).scroll(function () {
 		
 });
 
+let scroll_pos = 0;
+jQuery(window).scroll(function () {
+	scroll_pos = jQuery(window).scrollTop();
+	if (scroll_pos > 10) {
+		jQuery('.header-wraper').addClass('scrolled');
+	} else {
+		jQuery('.header-wraper').removeClass('scrolled');
+	}
+});
+
+let startPos = 0,winScrollTop = 0;
+jQuery(window).scroll(function () {
+		winScrollTop = jQuery(this).scrollTop();
+    if (winScrollTop >= startPos) {
+        jQuery('.header-wraper').addClass('hide');
+    } else {
+        jQuery('.header-wraper').removeClass('hide');
+    }
+    startPos = winScrollTop;
+});
+
+/////////// hamburger //////////////////
+jQuery(function() {
+		jQuery('#navToggle').click(function(){
+		jQuery('span').toggleClass('openNav');
+		jQuery('header').toggleClass('openNav');
+		jQuery('#mobile-container').toggleClass('openNav');
+		jQuery('.mobile-link').toggleClass('openNav');
+	});
+});
+
+
+
 
 
 
