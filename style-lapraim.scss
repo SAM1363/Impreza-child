@@ -244,10 +244,8 @@ html, body {
   -webkit-font-smoothing: antialiased;
   -moz-font-smoothing: antialiased;
   -o-font-smoothing: antialiased;
-  // margin: 20px;
 }
 * {
-  // position: relative;
   margin: 0;
   padding: 0;
   @include border-box;
@@ -280,8 +278,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 p, li {
   font-size: 19px;
-  // line-height: 1.5;
-  // margin-bottom: 30px; 
   a {
     text-decoration: underline;
   }
@@ -417,16 +413,6 @@ input[type="submit"].button {
 }
 
 /////// sidebar /////////
-// &.move {
-    //   position: fixed;
-    //   top: 220px;
-    //   right: -50px;
-    //   transform: rotateZ(90deg);
-    //   background: orange;
-    //   color: white;
-    //   font-weight: bold;
-    //   width: max-content;
-    //   }
 
 @mixin social-font{
   font-size: 20px;
@@ -440,7 +426,7 @@ input[type="submit"].button {
 .side-link{
   .social{
     position: fixed;
-    top: 200px;
+    top: 400px;
     right: -50px;
     transform: rotateZ(90deg);
     background: orange;
@@ -448,6 +434,12 @@ input[type="submit"].button {
     font-weight: bold;
     width: max-content;
     z-index: 2;
+    // transition: all .2s ease-in-out;
+    @include transition(all .2s ease-in-out);
+    &.disappear {
+      // transform: rotateZ(90deg) translateY(-100%);
+      @include transform(rotateZ(90deg) translateY(-100%));
+    }
     .connect{
       border-bottom: white 2px solid;
       h4{
@@ -461,10 +453,14 @@ input[type="submit"].button {
       div{
         @include social-font;
         border-bottom: white solid 2px;
-        transform: rotateZ(-90deg);
+        @include transform(rotateZ(-90deg));
+        // transform: rotateZ(-90deg);
         width: 100%;
         text-align: center;
         padding: 11px;
+        &:nth-child(4){
+          border-bottom: none;
+        }
       }
     }
   }
@@ -493,11 +489,9 @@ header{
       align-items: center;      
       position: fixed;
       z-index: 100;
-      // max-width: 1440px;
       width: 100%;
       margin-top: 35px;
       height: auto;
-      // background: rgba(255, 255, 255, 0.913);
       @media all and (min-width: 767px){
         &.scrolled{
           background: rgba(255, 255, 255, 0.913);
@@ -507,7 +501,8 @@ header{
       }
       
       &.hide{
-        transform: translateY(-150%);
+        // transform: translateY(-150%);
+        @include transform(translateY(-150%));
         @include transition( .5s ease-out);
       }
 
@@ -542,9 +537,8 @@ header{
             position:absolute; /*#navToggle div に対して*/
             width:100%;
             border-bottom:solid 3px #999;
-            -webkit-transition: .35s ease-in-out;
-            -moz-transition: .35s ease-in-out;
-            transition: .35s ease-in-out
+            // transition: .35s ease-in-out;
+            @include transition(.35s ease-in-out)
           }
           span:nth-child(1) {top:0}
           span:nth-child(2) {top:11px}
@@ -555,8 +549,10 @@ header{
         width: 35%;
         right: 0px;
         top: 100%;
-        display: flex;
-        flex-direction: column;
+        @include display-flex;
+        @include flex-direction(column);
+        // display: flex;
+        // flex-direction: column;
         background: rgba(255, 255, 255, 0.98);
         font-weight: 600;
         transition: .5s;
@@ -633,7 +629,6 @@ header{
             .wpcf7-form-control{
               border-radius: 0%;
               border: #d5d5d5 solid 1px;
-              // margin: 0 0 5%;
               padding: 5px;
               &.wpcf7-submit{
                 background: orange;
@@ -737,14 +732,12 @@ header{
     .vc_column-inner{
       padding: 0%;
         .st3{
-          transform: translate(0px, -50px);
+          // transform: translate(0px, -50px);
+          @include transform(translate(0px, -50px));
           padding: 8% 0 8% 7%;
           width: 100%;
           height: auto;
           background: rgb(242, 242, 242);
-          // @media all and (max-width: 1023px){
-          //   padding: 4%;
-          // }
           .Head{
             @include HeadT;
             .underL{
@@ -772,9 +765,9 @@ header{
       }
       
       .friedrich-container{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+        @include display-flex;
+        @include flex-direction(column);
+        @include justify-content(center);
         text-align: center;
         height: 350px;
         width: 580px;
@@ -787,8 +780,8 @@ header{
           }
         }
         .name{
-          justify-content: flex-end;
-          display: flex;
+          @include display-flex;
+          @include justify-content(flex-end);
           width: 90%;
         }
       }
@@ -904,7 +897,8 @@ footer{
     .i-cf{
       .g-cols{
         .contact-form{
-          transform: translate(10px, 175px);
+          // transform :(translate(10px, 175px);
+          @include transform(translate(10px, 175px));
           width: auto;
           .vc_column-inner{
           .wpb_wrapper{
@@ -914,8 +908,8 @@ footer{
         }
           .img1{
             .wpb_wrapper{
-              display: flex;
-              justify-content: flex-end;
+              @include display-flex;
+              @include justify-content(flex-end);
               .head-text{
                 width:auto;
             }    
@@ -990,7 +984,8 @@ footer{
 
   #section1 .i-cf .g-cols{
     .contact-form{
-      transform: translate(100px, 52%);
+      // transform: translate(100px, 52%);
+      @include transform(translate(100px, 52%));
       z-index: 1;
       .vc_column-inner{
         height: auto;
@@ -1019,8 +1014,8 @@ footer{
 
   #section3 .i-cf .vc_column-inner .st3 {
     padding: 4% 0 8% 7%;
-    transform: translate(0px, 0px);
-
+    @include transform(translate(0px, 0px));
+    // transform: translate(0px, 0px);
   }
 
   #section3 .g-cols{
@@ -1035,7 +1030,8 @@ footer{
           .friedrich-container{
             position: absolute;
             height: auto;
-                transform: translate(0px, -200px);
+                // transform: translate(0px, -200px);
+                @include transform(translate(0px, -200px));
             .name,.well-said{
               color: white;
             }
@@ -1088,26 +1084,30 @@ footer{
         span:nth-child(1){
           &.openNav{
             top: 11px;
-          transform:rotate(-45deg);
+          // transform:rotate(-45deg);
+          @include transform(rotate(-45deg));
           }  
         }
         span:nth-child(2),
         span:nth-child(3) {
           &.openNav{
             top: 11px;
-          transform:rotate(45deg);
+          // transform:rotate(45deg);
+          @include transform(rotate(45deg));
         }
       }
       }
       .mobile-link {
         right: -420px;
         height: 100vh;
-        display: flex;
-        justify-content: space-evenly;
+        @include display-flex;
+        @include justify-content(space-evenly);
         text-align: center;
         &.openNav{
-          transform: translateX(-420px);
-          transition: .5s ease-in-out;
+          // transform: translateX(-420px);
+          // transition: .5s ease-in-out;
+          @include transform(translateX(-420px));
+          @include transition(.5s ease-in-out);
           }
       }
     } 
@@ -1157,7 +1157,9 @@ footer{
   }
 }
 #section3 .g-cols .friedrich .wpb_wrapper .friedrich-container{
-  transform: translate(0px, -490px);
+  // transform: translate(0px, -490px);
+  @include transform(translate(0px, -490px));
+
 }
 
   #section3 .i-cf .vc_column-inner .friedrich-container .well-said, 
@@ -1256,15 +1258,15 @@ footer{
   }
 
   #section1 .i-cf .g-cols{
-    display: flex;
-    flex-direction: column-reverse;
+    @include display-flex;
+    @include flex-direction(column-reverse);
     align-items: center;
     .img1{
       align-items: center;
       .vc_column-inner {
         width: 100%;
         .wpb_wrapper{
-          justify-content: center;
+          @include justify-content(center);
           .t-right div.head-text{
           h3{
             font-size: 60px;
@@ -1286,7 +1288,8 @@ footer{
 
     .contact-form{
       position: absolute;
-      transform: translateY(245px);
+      // transform: translateY(245px);
+      @include transform(translateY(245px));
       align-items: center;
       .vc_column-inner {
         width: 400px;
@@ -1320,12 +1323,12 @@ footer{
   }
   .side-link{
     .social{
-      top: 280px;
-      // right: -75px;
-      &.hide{
-        transform: translateX(-150%);
-        @include transition( .5s ease-out);
-      }
+      display: none;
+      // top: 280px;
+      // &.hide{
+      //   transform: translateX(-150%);
+      //   @include transition( .5s ease-out);
+      // }
     }
   }
 
@@ -1341,7 +1344,9 @@ footer{
 }
 
   #section3 .g-cols .friedrich .wpb_wrapper .friedrich-container{
-    transform: translate(0px, -390px);
+    // transform: translate(0px, -390px);
+    @include transform(translate(0px, -390px));
+
     .name, .well-said{
       font-size: 22px;
     }
@@ -1381,7 +1386,9 @@ footer{
   }
 
     .contact-form{
-      transform: translateY(240px);
+      // transform: translateY(240px);
+      @include transform(translateY(240px));
+
       .vc_column-inner{
         width: 315px;
       }

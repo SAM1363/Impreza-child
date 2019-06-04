@@ -124,14 +124,17 @@ input[type="submit"].button {
 
 .side-link .social {
   position: fixed;
-  top: 200px;
+  top: 400px;
   right: -50px;
   transform: rotateZ(90deg);
   background: orange;
   color: white;
   font-weight: bold;
   width: max-content;
-  z-index: 2; }
+  z-index: 2;
+  transition: all .2s ease-in-out; }
+  .side-link .social.disappear {
+    transform: rotateZ(90deg) translateY(-100%); }
   .side-link .social .connect {
     border-bottom: white 2px solid; }
     .side-link .social .connect h4 {
@@ -160,6 +163,8 @@ input[type="submit"].button {
       @media all and (max-width: 767px) {
         .side-link .social .icons div {
           font-size: 15px; } }
+      .side-link .social .icons div:nth-child(4) {
+        border-bottom: none; }
 
 header {
   display: -webkit-flex;

@@ -50,7 +50,7 @@ if ( ( ! isset( $us_iframe ) OR ! $us_iframe ) AND ( ! isset( $us_hide_footer ) 
 			we are investors and problem solvers who can buy your house fast with a fair all cash offer.
 			<div class="copyrgiht">
 				<p>© 2017 Renovative Properties</p>
-				<p>Designed & Developed By <span>LaPraim Media</span></p>
+				<p>Designed & Developed By <span>LaPraim</span></p>
 			</div>
 		</div>
 	</footer>
